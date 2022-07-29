@@ -20,7 +20,11 @@ public class Utils {
 		scanner = new Scanner(System.in);
 	}
 
-	public Long getLong() {
+    public static String getInput() {
+		return getInput();
+    }
+
+    public Long getLong() {
 		String input = null;
 		Long longInput = null;
 		do {
@@ -28,7 +32,7 @@ public class Utils {
 				input = getString();
 				longInput = Long.parseLong(input);
 			} catch (NumberFormatException nfe) {
-				LOGGER.info("Error - Please enter a number");
+				LOGGER.info("Error - Integer Only!");
 			}
 		} while (longInput == null);
 		return longInput;
@@ -46,10 +50,9 @@ public class Utils {
 				input = getString();
 				doubleInput = Double.parseDouble(input);
 			} catch (NumberFormatException nfe) {
-				LOGGER.info("Error - Please enter a number");
+				LOGGER.info("Error - Integer Only!");
 			}
 		} while (doubleInput == null);
 		return doubleInput;
 	}
-
 }
