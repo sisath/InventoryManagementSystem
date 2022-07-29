@@ -96,19 +96,6 @@ Here's an example of a Mockito test for the testAddProducts() and testRemoveProd
         assertEquals(1L, controller.removeProducts());
     }
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
@@ -119,7 +106,7 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Stanislav Angelov** - *Initial work* - [christophperrins](https://github.com/sisath)
 
 ## License
 
@@ -129,6 +116,5 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Special thank you to all the amazing tutors who have been guiding us since day 1 at QA Ltd.
+
