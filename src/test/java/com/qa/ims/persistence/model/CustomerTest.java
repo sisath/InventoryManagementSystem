@@ -1,4 +1,4 @@
-package com.qa.ims.persistence.domain;
+package com.qa.ims.persistence.model;
 
 import org.junit.Test;
 
@@ -10,5 +10,4 @@ public class CustomerTest {
 	public void testEquals() {
 		EqualsVerifier.simple().forClass(Customer.class).verify();
 	}
-
 }
