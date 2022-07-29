@@ -44,28 +44,21 @@ Now you are fully connected !
 
 Now you are free to create a customer, a product, create an order and also create an order_product.
 
-
-...................
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
+The tests for the Inventory Management System applications have been done utilising JUnit and Mockito framework.The tests can be ran within an Integrated Development Environment (IDE). In order to run the tests, navigate to:
+
+![image](https://user-images.githubusercontent.com/97594829/181772309-8e43ed40-a3df-4aac-bc19-43a63cd04421.png)
+
+And right click with the mouse/touchpad and choose:
+
+![image](https://user-images.githubusercontent.com/97594829/181772572-d0000da0-e485-4746-b1ec-8420c08b4599.png)
+
+```Run `All Tests` with Coverage``` 
+
+Ideally, those tests would have a coverage around or above 80%, however, in this case only 66% coverage has been achieved. THis amount has been sufficient for the purpose provided, and with more time and more tests being done a coverage beyond 80% would be easily achievable.
+
+The 66% Coverage only includes the CRUD functioality of the App, that includes Controller & DAO Classes, the rest of the classes have not been fully tested, hence why the lower coverage percentage.
 
 ### Unit Tests 
 
