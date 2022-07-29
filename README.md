@@ -112,6 +112,8 @@ Here's an example of a JUnit test for the testEquals for the OrderProduct class.
 
 Here's an example of a Mockito test for the testAddProducts() and testRemoveProducts, which were an extension task for the Inventory Mangement System project. Here, we are testing whether the functions are doing what they are expecting to be doing.
 
+Let's have a look at this test, testAddProducts();
+    
 ```
  @Test
     public void testAddProducts() {
@@ -123,16 +125,34 @@ Here's an example of a Mockito test for the testAddProducts() and testRemoveProd
         assertEquals(created, controller.addProducts());
         Mockito.verify(utils, Mockito.times(3)).getLong();
     }
-
-    @Test
-    public void testRemoveProducts() {
-        long orderProductId = 1L;
-
-        Mockito.when(utils.getLong()).thenReturn(orderProductId);
-
-        assertEquals(1L, controller.removeProducts());
-    }
 ```
+
+
+1. ```long quantity = 1L;
+        OrderProduct created = new OrderProduct(2L, product, order, quantity);
+        ```
+   
+In here we are setting the quantity to 1. Next line, we are creating an OrderProduct, with orderProductId of 2, a product, with
+productId of 1, price 10.00, productName='Notebook', productDescription='Very nice notebook', then we are creating an order with orderId of 1, a customer with customerId = 1, firstName='Stanislav', surname='Angelov', email='email@gmail.com', postCode='RM92HJ', and a cost=60.
+
+We get this information from a little above where we have initialised the following 
+
+```private final Customer customer = new Customer(1L,"Stanislav", "Angelov", "email@gmail.com", "RM92HJ");
+    private final Product product = new Product(1L, 10L, "Notebook", "Very nice notebook");
+    private final Order order = new Order(1L, customer, 60L);
+    
+  ```
+
+2. ```Mockito.when(utils.getLong()).thenReturn(1L);```
+
+In here we are mocking utils: "utils"
+
+3. ```assertEquals(created, controller.addProducts());
+        Mockito.verify(utils, Mockito.times(3)).getLong();```
+        
+ Finally, we are mocking the utils: "utils" again and we get our result back, in this case the test has passed and that is what we would like to see.
+ 
+ 
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
