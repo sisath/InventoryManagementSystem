@@ -1,4 +1,4 @@
-package com.qa.ims.persistence.domain;
+package com.qa.ims.persistence.model;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -6,13 +6,15 @@ import org.apache.logging.log4j.Logger;
 import com.qa.ims.utils.Utils;
 
 public enum Domain {
-
-	CUSTOMER("Information about customers"), ITEM("Individual Items"), ORDER("Purchases of items"),
-	STOP("To close the application");
+	CUSTOMER("Customer Creation and Information"),
+	PRODUCT("Product Creation and Information"),
+	ORDER("Order Placement and Information"),
+	ORDER_PRODUCT("Order a Product and Information"),
+	EXIT("");
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	private String description;
+	private final String description;
 
 	private Domain(String description) {
 		this.description = description;
@@ -40,5 +42,4 @@ public enum Domain {
 		}
 		return domain;
 	}
-
 }

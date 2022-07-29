@@ -16,17 +16,14 @@ import org.apache.logging.log4j.Logger;
 public class DBUtils {
 
 	private static final Logger LOGGER = LogManager.getLogger();
-
 	private final String dbUrl;
-
 	private final String dbUser;
-
 	private final String dbPassword;
 
 	private DBUtils(String properties) {
 		Properties dbProps = new Properties();
-		try (InputStream fis = ClassLoader.getSystemResourceAsStream(properties)) {
-			dbProps.load(fis);
+		try (InputStream is = ClassLoader.getSystemResourceAsStream(properties)) {
+			dbProps.load(is);
 		} catch (Exception e) {
 			LOGGER.error(e);
 		}
@@ -39,14 +36,12 @@ public class DBUtils {
 		this("db.properties");
 	}
 
-	public int init(String... paths) {
+	public void init(String... paths) {
 		int modified = 0;
 
 		for (String path : paths) {
 			modified += executeSQLFile(path);
 		}
-
-		return modified;
 	}
 
 	public int executeSQLFile(String file) {
@@ -59,12 +54,12 @@ public class DBUtils {
 				try (Statement statement = connection.createStatement();) {
 					return statement.executeUpdate(string);
 				} catch (Exception e) {
-					LOGGER.debug(e);
+					LOGGER.error(e);
 					return 0;
 				}
-			}).reduce((acc, next) -> acc + next).orElse(0);
+			}).reduce(Integer::sum).orElse(0);
 		} catch (Exception e) {
-			LOGGER.debug(e);
+			LOGGER.error(e);
 		}
 		return modified;
 	}
@@ -75,9 +70,8 @@ public class DBUtils {
 
 	private static DBUtils instance;
 
-	public static DBUtils connect() {
+	public static void connect() {
 		instance = new DBUtils();
-		return instance;
 	}
 
 	public static DBUtils connect(String properties) {
@@ -91,5 +85,4 @@ public class DBUtils {
 		}
 		return instance;
 	}
-
 }

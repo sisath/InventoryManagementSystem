@@ -11,13 +11,17 @@ import com.qa.ims.utils.Utils;
  *
  */
 public enum Action {
-	CREATE("To save a new entity into the database"), READ("To read an entity from the database"),
-	UPDATE("To change an entity already in the database"), DELETE("To remove an entity from the database"),
-	RETURN("To return to domain selection");
+	CREATE("Create an Entity"),
+	READ("Read an Entity"),
+	UPDATE("Update an Entity"),
+	DELETE("Remove an Entity"),
+	BACK("Go Back"),
+	ADD_PRODUCT("Add a Product"),
+	REMOVE_PRODUCT("Remove a Product");
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	private String description;
+	private final String description;
 
 	Action(String description) {
 		this.description = description;
@@ -51,10 +55,9 @@ public enum Action {
 			try {
 				action = Action.valueOf(utils.getString().toUpperCase());
 			} catch (IllegalArgumentException e) {
-				LOGGER.error("Invalid selection please try again");
+				LOGGER.error("Invalid selection. Try again.");
 			}
 		} while (action == null);
 		return action;
 	}
-
 }
