@@ -19,8 +19,33 @@ All the dependencies needed in order to run the application have been included i
 ### Installing
 
 First, in order for the project to be ran, it needs to be downloaded onto the local machine. 
+
 ![image](https://user-images.githubusercontent.com/97594829/181769988-6f4c31d3-805f-4190-9642-b533b587984c.png)
 
+Click on the green button "Code" and select the HTTPS. Copy the link. Next, choose a place where you would like to clone the GitRepository.
+
+![image](https://user-images.githubusercontent.com/97594829/181770391-d350efff-0430-4746-ad25-50b21f8a4968.png)
+
+Open GitBash or any other command line interface and type ```git clone https://github.com/sisath/InventoryManagementSystem.git```
+
+![image](https://user-images.githubusercontent.com/97594829/181770557-272b9717-2ef7-49aa-b19d-18db3d0ff086.png)
+
+![image](https://user-images.githubusercontent.com/97594829/181770633-865e8444-1b99-4522-b4b5-1a9d3f2edf08.png)
+
+In order to run the application, open any command line interface and type ```java -jar ims-0.0.1-jar-with-dependencies.jar```
+
+Next, it is going to ask for your login details, use the following:
+
+![image](https://user-images.githubusercontent.com/97594829/181771282-0ba5eae7-7261-4ec3-91e0-e99f9821fe14.png)
+
+Now you are fully connected !
+
+![image](https://user-images.githubusercontent.com/97594829/181771347-6c8a4610-74fc-4ff4-bd39-15f697308ab9.png)
+
+Now you are free to create a customer, a product, create an order and also create an order_product.
+
+
+...................
 
 A step by step series of examples that tell you how to get a development env running
 
