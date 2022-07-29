@@ -71,9 +71,8 @@ Here's an example of a JUnit test for the testEquals for the OrderProduct class.
     }
 ```
 ### Integration Tests 
-Explain what these tests test, why and how to run them
 
-Here's an example of a Mockito test for the testAddProducts() and testRemoveProducts, which were an extension task for the Inventory Mangement System project.
+Here's an example of a Mockito test for the testAddProducts() and testRemoveProducts, which were an extension task for the Inventory Mangement System project. Here, we are testing whether the functions are doing what they are expecting to be doing.
 
 ```
  @Test
