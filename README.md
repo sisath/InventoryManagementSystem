@@ -44,6 +44,44 @@ Now you are fully connected !
 
 Now you are free to create a customer, a product, create an order and also create an order_product.
 
+## Databse - How It Works
+
+Entity Relationship Diagram
+
+![ERDDiagram](https://user-images.githubusercontent.com/97594829/181777863-d2777d10-1d7a-400a-abdf-cdaa9298400f.png)
+
+This is what the database looks like, they are all interconnected between eachother. Customer allows you to create a
+customer by providing a first_name, surname, email and postcode. Once a customer is created, next what you would like to create is a product, by providing a price, product_name and a description. Next, you create an order, by providing a customerId. Finally, you create a order_product where you provide a customer_id, product_id, order_id and quantity, the number of products that you would like to have. Orders, also have a calculating method, where it calculates the total price by multiplying the quantity by the product price. For example, If you order 5 hats, each one of them costing 10.00, you would get 50.00 on your order.
+
+## Project - Demonstration
+
+Let's start by creating a customer.
+
+```Customer{customerId=1, firstName='Stanislav', surname='Angelov', email='stanislav@gmail.com', postCode='EI75GH'}```
+![image](https://user-images.githubusercontent.com/97594829/181779932-0d69bc2b-6ee3-4122-b411-d5db4126c2f1.png)
+
+Next, create a product.
+
+```Product{productId=1, price=10.0, productName='Hat', productDescription='A small hat'}```
+![image](https://user-images.githubusercontent.com/97594829/181779990-6fa9d14d-11c4-49be-863f-55dc1ecd1cfa.png)
+
+Here, we have created a product with the name "Hat", having a price of 10.00
+
+Time to create the order!
+
+```Order{orderId=1, customer=Customer{customerId=1, firstName='Stanislav', surname='Angelov', email='stanislav@gmail.com', postCode='EI75GH'}, cost=0}```
+
+![image](https://user-images.githubusercontent.com/97594829/181780124-8aad8130-7b75-4f77-ae94-4c8602874417.png)
+
+As you may notice, the cost us currently ```0```, as we have not specified how many "Hats" we would like to order.
+
+```OrderProduct{orderProductId=1, product=Product{productId=1, price=10.0, productName='Hat', productDescription='A small hat'}, order=Order{orderId=1, customer=Customer{customerId=1, firstName='Stanislav', surname='Angelov', email='stanislav@gmail.com', postCode='EI75GH'}, cost=50}, quantity=5}```
+
+![image](https://user-images.githubusercontent.com/97594829/181780379-048cf50e-3e54-4d68-8e6f-c4d8bcf7caa1.png)
+
+We have specified that we want 5 "Hats", and therefore the cost has been calculated to 50!
+
+
 ## Running the tests
 
 The tests for the Inventory Management System applications have been done utilising JUnit and Mockito framework.The tests can be ran within an Integrated Development Environment (IDE). In order to run the tests, navigate to:
