@@ -106,7 +106,11 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Stanislav Angelov** - *Initial work* - [christophperrins](https://github.com/sisath)
+* **Stanislav Angelov** - [sisath](https://github.com/sisath)
+
+## Jira Link
+
+* https://sisoathc.atlassian.net/jira/software/projects/IMS/boards/4/roadmap
 
 ## License
 
