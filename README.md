@@ -62,17 +62,39 @@ The 66% Coverage only includes the CRUD functioality of the App, that includes C
 
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
+Here's an example of a JUnit test for the testEquals for the OrderProduct class.
 
 ```
-Give an example
+ @Test
+    public void testEquals() {
+        EqualsVerifier.simple().forClass(OrderProduct.class).verify();
+    }
 ```
-
 ### Integration Tests 
 Explain what these tests test, why and how to run them
 
+Here's an example of a Mockito test for the testAddProducts() and testRemoveProducts, which were an extension task for the Inventory Mangement System project.
+
 ```
-Give an example
+ @Test
+    public void testAddProducts() {
+        long quantity = 1L;
+        OrderProduct created = new OrderProduct(2L, product, order, quantity);
+
+        Mockito.when(utils.getLong()).thenReturn(1L);
+
+        assertEquals(created, controller.addProducts());
+        Mockito.verify(utils, Mockito.times(3)).getLong();
+    }
+
+    @Test
+    public void testRemoveProducts() {
+        long orderProductId = 1L;
+
+        Mockito.when(utils.getLong()).thenReturn(orderProductId);
+
+        assertEquals(1L, controller.removeProducts());
+    }
 ```
 
 ### And coding style tests
